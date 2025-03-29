@@ -39,6 +39,7 @@ namespace PCSpectate
 				if (!tpc.GetComponent<CinemachineBrain>().enabled) tpc.GetComponent<CinemachineBrain>().enabled = true;
 				if (cameracube is not null) Destroy(cameracube);
 				if (cameracube2 is not null) Destroy(cameracube2);
+    				return;
 			}
 			
 			if (cameracube is null)
