@@ -26,22 +26,19 @@ namespace PCSpectate
 			if (!init) return;
 			
 			var tpc = GorillaTagger.Instance.thirdPersonCamera.transform.GetChild(0).gameObject;
-			var liv = GameObject.Find("Player Objects/Player VR Controller/GorillaPlayer/TurnParent/Main Camera/LCKBodyCameraSpawner(Clone)/CameraRenderModel/");
-
-			if (spectator && !liv.activeSelf)
+			
+			if (spectator && !GameObject.Find("Player Objects/Player VR Controller/GorillaPlayer/TurnParent/Main Camera/LCKBodyCameraSpawner(Clone)/CameraRenderModel/").activeSelf)
 			{
 				if (tpc.GetComponent<CinemachineBrain>().enabled) tpc.GetComponent<CinemachineBrain>().enabled = false;
 				tpc.transform.position = pos;
 				tpc.transform.rotation = rot;
-    				if (!cameracube.activeSelf) cameracube.SetActive(true);
-				if (!cameracube2.activeSelf) cameracube2.SetActive(true);
 				movement();
 			}
 			else
 			{
 				if (!tpc.GetComponent<CinemachineBrain>().enabled) tpc.GetComponent<CinemachineBrain>().enabled = true;
-				if (cameracube.activeSelf) cameracube.SetActive(false);
-				if (cameracube2.activeSelf) cameracube2.SetActive(false);
+				if (cameracube is not null) Destroy(cameracube);
+				if (cameracube2 is not null) Destroy(cameracube2);
 			}
 			
 			if (cameracube is null)
