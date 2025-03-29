@@ -6,6 +6,7 @@ A Gorilla Tag mod that lets you move around the camera with WASD.
 The LIV camera works fine with this mod. (Lmk if there is bugs [here](<https://github.com/defaultuser0-nerd/PCSpectate/issues>))
 
 All you need to do to enable it is with a small button in the top right corner.
+
 ![image](https://github.com/user-attachments/assets/14ef0da7-51ea-4a39-8fad-9ece5d422ed5)
 
 https://github.com/user-attachments/assets/2df2d1ca-fc97-4a29-96fb-b9e6f749a361
