@@ -9,6 +9,8 @@ All you need to do to enable it is with a small button in the top right corner.
 
 ![image](https://github.com/user-attachments/assets/14ef0da7-51ea-4a39-8fad-9ece5d422ed5)
 
+You can also change the FOV and speed in the config file.
+
 https://github.com/user-attachments/assets/2df2d1ca-fc97-4a29-96fb-b9e6f749a361
 
 #### **Requirements**
