@@ -33,6 +33,8 @@ namespace PCSpectate
 				if (tpc.GetComponent<CinemachineBrain>().enabled) tpc.GetComponent<CinemachineBrain>().enabled = false;
 				tpc.transform.position = pos;
 				tpc.transform.rotation = rot;
+    				if (!cameracube.activeSelf) cameracube.SetActive(true);
+				if (!cameracube2.activeSelf) cameracube2.SetActive(true);
 				movement();
 			}
 			else
