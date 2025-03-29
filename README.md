@@ -3,7 +3,7 @@
 
 A Gorilla Tag mod that lets you move around the camera.
 
-The LIV camera works fine with this mod. (Lmk if there is bugs [here](<https://github.com/defaultuser0-nerd/PCSpectate/issues>)
+The LIV camera works fine with this mod. (Lmk if there is bugs [here](<https://github.com/defaultuser0-nerd/PCSpectate/issues>))
 
 #### **Requirements**
  - [BepInEx](<https://github.com/BepInEx/BepInEx/releases/latest>)
