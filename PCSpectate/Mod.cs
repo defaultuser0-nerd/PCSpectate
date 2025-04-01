@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 
 namespace PCSpectate
 {
-	[BepInPlugin("default.PCSpectate", "PCSpectate", "1.0.0")]
+	[BepInPlugin("default.PCSpectate", "PCSpectate", "1.0.1")]
 	public class Mod : BaseUnityPlugin
 	{
-		bool spectator, init;
+		bool spectator, init, gui = true;
 		GameObject cameracube, cameracube2;
 		Vector3 pos = new Vector3(-64.9141f, 12.2157f, -84.0814f);
 		Quaternion rot = Quaternion.Euler(3.75f, 307.5f, 0);
@@ -31,6 +31,8 @@ namespace PCSpectate
 			if (!init) return;
 			
 			var tpc = GorillaTagger.Instance.thirdPersonCamera.transform.GetChild(0).gameObject;
+			
+			if (Keyboard.current.tabKey.wasPressedThisFrame) gui = !gui;
 
 			if (spectator)
 			{
@@ -68,6 +70,7 @@ namespace PCSpectate
 			}
 			else
 			{
+				if (!GameObject.Find("Player Objects/Player VR Controller/GorillaPlayer/TurnParent/Main Camera/LCKBodyCameraSpawner(Clone)/CameraRenderModel/").activeSelf) if (!tpc.GetComponent<CinemachineBrain>().enabled) tpc.GetComponent<CinemachineBrain>().enabled = true;
 				if (!Mathf.Approximately(tpc.GetComponent<Camera>().fieldOfView, 60)) tpc.GetComponent<Camera>().fieldOfView = 60;
 				if (cameracube is not null) if (cameracube.activeSelf) cameracube.SetActive(false);
 				if (cameracube2 is not null) if (cameracube2.activeSelf) cameracube2.SetActive(false);
@@ -92,6 +95,8 @@ namespace PCSpectate
 		}
 		void OnGUI()
 		{
+			if (!gui) return;
+			
 			if (GUI.Button(new Rect(0, 0, 120, 20), spectator ? "disable spec cam" : "enable spec cam")) spectator = !spectator;	
 		}
 	}
